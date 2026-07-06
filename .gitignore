@@ -1,0 +1,26 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.translation
+
+# Mono/C# (.NET) specific ignores
+bin/
+obj/
+.dotnet/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+
+# Visual Studio Code specific ignores
+.vscode/
+*.code-workspace
+
+# Ignore Godot C# UID files globally
+*.uid
+
+# Godot Build Artifacts
+*.exe
+*.pck
+data_2d_ping_pong_windows_x86_64/
+builds/
