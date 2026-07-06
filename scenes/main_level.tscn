@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dn6n6rjeg0ch6"]
+
+[sub_resource type="Curve2D" id="Curve2D_48gi8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 448, 64, 0, 0, 0, 0, 448, 192, 0, 0, 0, 0, 64, 192, 0, 0, 0, 0, 64, 640, 0, 0, 0, 0, 256, 640, 0, 0, 0, 0, 256, 384, 0, 0, 0, 0, 448, 384)
+}
+point_count = 8
+
+[node name="MainLevel" type="Node2D" unique_id=2070715244]
+
+[node name="EnemyPath" type="Path2D" parent="." unique_id=386758752]
+curve = SubResource("Curve2D_48gi8")
