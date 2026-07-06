@@ -19,6 +19,17 @@ public abstract partial class EnemyBase : PathFollow2D
     if (CurrentHealth <= 0) Die();
   }
 
+  public override void _PhysicsProcess(double delta)
+  {
+    base._PhysicsProcess(delta);
+    Progress += Speed * (float)delta;
+    if (ProgressRatio >= 1.0f)
+    {
+      GD.Print($"{Name} has reached the end of the path.");
+      QueueFree();
+    }
+  }
+
   protected virtual void Die()
   {
     GD.Print($"{Name} has died.");
