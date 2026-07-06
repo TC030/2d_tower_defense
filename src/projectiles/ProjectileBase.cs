@@ -8,10 +8,10 @@ public abstract partial class ProjectileBase : Node2D
   protected EnemyBase Target = null;
   protected float Damage = 0f;
 
-  public virtual void Init(EnemyBase _target, float _damage)
+  public virtual void Init(EnemyBase target, float damage)
   {
-    this.Target = _target;
-    this.Damage = _damage;
+    this.Target = target;
+    this.Damage = damage;
   }
 
   public override void _PhysicsProcess(double delta)

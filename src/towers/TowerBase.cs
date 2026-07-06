@@ -17,9 +17,9 @@ public abstract partial class TowerBase : Node2D
     GD.Print($"{Name} is ready. Target range: {TargetRange}, Attack speed: {AttackSpeed}");
   }
 
-  public override void _Process(double delta)
+  public override void _PhysicsProcess(double delta)
   {
-    base._Process(delta);
+    base._PhysicsProcess(delta);
     UpdateTarget();
     HandleAttack(delta);
   }
