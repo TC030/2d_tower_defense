@@ -1,6 +1,6 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2D Tower Defense", "2D Tower Defense.csproj", "{48E7DD72-EACD-492A-BA57-65F1D7D77310}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2d_tower_defense", "2d_tower_defense.csproj", "{48E7DD72-EACD-492A-BA57-65F1D7D77310}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
