@@ -3,7 +3,7 @@ using System;
 
 public partial class NormalTower : TowerBase
 {
-	private float Damage = 10f;
+	private float Damage = 30f;
 	public override void _Ready()
 	{
 		base._Ready();

@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dsl2k2ng6oxpk" path="res://src/levels/MainLevel.cs" id="1_ufxs0"]
 [ext_resource type="PackedScene" uid="uid://5x2udiugvyhd" path="res://scenes/normal_enemy.tscn" id="1_v3uhd"]
 [ext_resource type="PackedScene" uid="uid://brj1hy4onptsj" path="res://scenes/normal_tower.tscn" id="3_6we3w"]
-[ext_resource type="Script" uid="uid://v6ybxlh8lqu4" path="res://src/enemies/EnemyPathFollower.cs" id="3_qmak7"]
 
 [sub_resource type="Curve2D" id="Curve2D_48gi8"]
 _data = {
@@ -17,10 +16,6 @@ EnemyScene = ExtResource("1_v3uhd")
 
 [node name="EnemyPath" type="Path2D" parent="." unique_id=386758752]
 curve = SubResource("Curve2D_48gi8")
-
-[node name="EnemyPathFollower" type="PathFollow2D" parent="EnemyPath" unique_id=109579505]
-position = Vector2(64, 64)
-script = ExtResource("3_qmak7")
 
 [node name="NormalTower" parent="." unique_id=1050202050 instance=ExtResource("3_6we3w")]
 position = Vector2(296, 152)
