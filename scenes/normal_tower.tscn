@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brj1hy4onptsj"]
+
+[ext_resource type="Script" uid="uid://dkek2rjyklva2" path="res://src/towers/NormalTower.cs" id="1_wf5au"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrlwn"]
+radius = 128.0
+
+[node name="NormalTower" type="Node2D" unique_id=1050202050]
+script = ExtResource("1_wf5au")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=857216224]
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+color = Color(0, 1, 1, 1)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=998753873]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=1868715590]
+shape = SubResource("CircleShape2D_hrlwn")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="OnDetectionAreaBodyEntered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="OnDetectionAreaBodyExited"]

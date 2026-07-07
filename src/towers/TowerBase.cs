@@ -15,6 +15,32 @@ public abstract partial class TowerBase : Node2D
   {
     base._Ready();
     GD.Print($"{Name} is ready. Target range: {TargetRange}, Attack speed: {AttackSpeed}");
+    Area2D detectionArea = GetNode<Area2D>("DetectionArea");
+    detectionArea.BodyEntered += OnDetectionAreaBodyEntered;
+    detectionArea.BodyExited += OnDetectionAreaBodyExited;
+  }
+
+  private void OnDetectionAreaBodyEntered(Node body)
+  {
+    if (body is EnemyBase enemy)
+    {
+      TargetsInRange.Add(enemy);
+      GD.Print($"{enemy.Name} entered {Name}'s range.");
+    }
+  }
+
+  private void OnDetectionAreaBodyExited(Node body)
+  {
+    if (body is EnemyBase enemy)
+    {
+      TargetsInRange.Remove(enemy);
+      GD.Print($"{enemy.Name} exited {Name}'s range.");
+      if (CurrentTarget == enemy)
+      {
+        CurrentTarget = null;
+        GD.Print($"{Name} lost its current target.");
+      }
+    }
   }
 
   public override void _PhysicsProcess(double delta)
