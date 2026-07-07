@@ -2,10 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dxqgrpsirm6yh" path="res://src/enemies/NormalEnemy.cs" id="1_jnsnc"]
 
-[node name="NormalEnemy" type="PathFollow2D" unique_id=1242545584]
+[node name="NormalEnemy" type="Node2D" unique_id=63926934]
 script = ExtResource("1_jnsnc")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=597395422]
+[node name="EnemyPath" type="PathFollow2D" parent="." unique_id=1457069389]
+
+[node name="ColorRect" type="ColorRect" parent="EnemyPath" unique_id=597395422]
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0

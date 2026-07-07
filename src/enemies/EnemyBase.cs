@@ -6,6 +6,7 @@ public abstract partial class EnemyBase : PathFollow2D
   [Export] public float Speed { get; protected set; } = 100f;
   [Export] public float MaxHealth { get; protected set; } = 100f;
   public float CurrentHealth { get; protected set; }
+  private PathFollow2D _pathFollow;
 
   public override void _Ready()
   {
@@ -22,8 +23,9 @@ public abstract partial class EnemyBase : PathFollow2D
   public override void _PhysicsProcess(double delta)
   {
     base._PhysicsProcess(delta);
-    Progress += Speed * (float)delta;
-    if (ProgressRatio >= 1.0f)
+    _pathFollow.Progress += Speed * (float)delta;
+    this.GlobalPosition = _pathFollow.GlobalPosition;
+    if (_pathFollow.ProgressRatio >= 1.0f)
     {
       GD.Print($"{Name} has reached the end of the path.");
       QueueFree();
