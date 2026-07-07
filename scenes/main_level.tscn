@@ -22,7 +22,5 @@ curve = SubResource("Curve2D_48gi8")
 position = Vector2(64, 64)
 script = ExtResource("3_qmak7")
 
-[node name="NormalEnemy" parent="EnemyPath/EnemyPathFollower" unique_id=63926934 instance=ExtResource("1_v3uhd")]
-
 [node name="NormalTower" parent="." unique_id=1050202050 instance=ExtResource("3_6we3w")]
 position = Vector2(296, 152)

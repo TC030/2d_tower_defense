@@ -8,13 +8,16 @@ public partial class EnemyPathFollower : PathFollow2D
 	public override void _Ready()
 	{
 		base._Ready();
-		_enemy = GetChild<EnemyBase>(0);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
   public override void _PhysicsProcess(double delta)
   {
     base._PhysicsProcess(delta);
+    if (_enemy == null && GetChildCount() > 0)
+    {
+      _enemy = GetChild<EnemyBase>(0);
+    }
 		if (_enemy == null) return;
     Progress += _enemy.Speed * (float)delta;
     if (ProgressRatio >= 1.0f)
