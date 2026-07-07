@@ -22,15 +22,15 @@ public partial class MainLevel : Node
 			GD.PrintErr("EnemyScene is not assigned.");
 			return;
 		}
-
+		EnemyPathFollower pathFollower = new EnemyPathFollower();
 		var enemyInstance = EnemyScene.Instantiate<EnemyBase>();
 		if (enemyInstance == null)
 		{
 			GD.PrintErr("Failed to instantiate EnemyBase from EnemyScene.");
 			return;
 		}
-
-		_enemyPath.AddChild(enemyInstance);
+		pathFollower.AddChild(enemyInstance);
+		_enemyPath.AddChild(pathFollower);
 	}
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
