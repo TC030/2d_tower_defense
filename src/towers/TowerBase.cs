@@ -16,11 +16,11 @@ public abstract partial class TowerBase : Node2D
     base._Ready();
     GD.Print($"{Name} is ready. Target range: {TargetRange}, Attack speed: {AttackSpeed}");
     Area2D detectionArea = GetNode<Area2D>("DetectionArea");
-    detectionArea.BodyEntered += OnDetectionAreaBodyEntered;
-    detectionArea.BodyExited += OnDetectionAreaBodyExited;
+    detectionArea.AreaEntered += OnDetectionAreaAreaEntered;
+    detectionArea.AreaExited += OnDetectionAreaAreaExited;
   }
 
-  private void OnDetectionAreaBodyEntered(Node body)
+  private void OnDetectionAreaAreaEntered(Node body)
   {
     if (body is EnemyBase enemy)
     {
@@ -29,7 +29,7 @@ public abstract partial class TowerBase : Node2D
     }
   }
 
-  private void OnDetectionAreaBodyExited(Node body)
+  private void OnDetectionAreaAreaExited(Node body)
   {
     if (body is EnemyBase enemy)
     {
@@ -52,6 +52,7 @@ public abstract partial class TowerBase : Node2D
 
   protected virtual void UpdateTarget()
   {
+    TargetsInRange.RemoveAll(enemy => !GodotObject.IsInstanceValid(enemy));
     if (TargetsInRange.Count > 0)
     {
       CurrentTarget = TargetsInRange[0];

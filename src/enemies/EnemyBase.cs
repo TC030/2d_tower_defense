@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public abstract partial class EnemyBase : Node2D
+public abstract partial class EnemyBase : Area2D
 {
   [Export] public float Speed { get; protected set; } = 100f;
   [Export] public float MaxHealth { get; protected set; } = 100f;

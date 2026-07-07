@@ -21,7 +21,8 @@ public partial class NormalTower : TowerBase
 			GD.Print($"{Name} has no enemy to attack.");
 		}
 	}
-	public override void _Process(double delta)
-	{	
-	}
+  public override void _PhysicsProcess(double delta)
+  {
+    base._PhysicsProcess(delta);
+  }
 }

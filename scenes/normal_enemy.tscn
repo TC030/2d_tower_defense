@@ -2,7 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dxqgrpsirm6yh" path="res://src/enemies/NormalEnemy.cs" id="1_jnsnc"]
 
-[node name="NormalEnemy" type="Node2D" unique_id=63926934]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrlwn"]
+size = Vector2(32, 32)
+
+[node name="NormalEnemy" type="Area2D" unique_id=269286972]
 script = ExtResource("1_jnsnc")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=597395422]
@@ -10,3 +13,6 @@ offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
 offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=967641289]
+shape = SubResource("RectangleShape2D_hrlwn")
