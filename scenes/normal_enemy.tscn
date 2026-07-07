@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://5x2udiugvyhd"]
 
-[ext_resource type="Script" uid="uid://baacbugk58i0f" path="res://src/enemies/EnemyBase.cs" id="1_jnsnc"]
+[ext_resource type="Script" uid="uid://dxqgrpsirm6yh" path="res://src/enemies/NormalEnemy.cs" id="1_jnsnc"]
 
 [node name="NormalEnemy" type="PathFollow2D" unique_id=1242545584]
 script = ExtResource("1_jnsnc")

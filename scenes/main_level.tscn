@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://dn6n6rjeg0ch6"]
 
+[ext_resource type="Script" uid="uid://dsl2k2ng6oxpk" path="res://src/levels/MainLevel.cs" id="1_ufxs0"]
+[ext_resource type="PackedScene" uid="uid://5x2udiugvyhd" path="res://scenes/normal_enemy.tscn" id="1_v3uhd"]
+
 [sub_resource type="Curve2D" id="Curve2D_48gi8"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 64, 64, 0, 0, 0, 0, 448, 64, 0, 0, 0, 0, 448, 192, 0, 0, 0, 0, 64, 192, 0, 0, 0, 0, 64, 640, 0, 0, 0, 0, 256, 640, 0, 0, 0, 0, 256, 384, 0, 0, 0, 0, 448, 384)
@@ -7,6 +10,8 @@ _data = {
 point_count = 8
 
 [node name="MainLevel" type="Node2D" unique_id=2070715244]
+script = ExtResource("1_ufxs0")
+EnemyScene = ExtResource("1_v3uhd")
 
 [node name="EnemyPath" type="Path2D" parent="." unique_id=386758752]
 curve = SubResource("Curve2D_48gi8")
